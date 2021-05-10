@@ -1,10 +1,14 @@
 <template>
   <div class="legal">
-    <Fields class="fields" :fields="fields" :FORM_ID="FORM_ID" />
+    <!-- <Fields class="fields" :fields="fields" :FORM_ID="FORM_ID" /> -->
+    <Fields
+      :fields="fields"
+      :entries="entries"
+    />
   </div>
 </template>
 <script>
-import Fields from '@/components/fields'
+import { Fields } from '@byzanteam/slp-fields'
 
 export default {
   components: {
@@ -12,9 +16,10 @@ export default {
   },
   data() {
     return {
-      fields: {},
-      FORM_ID: 5,
-      USER: this.common.getLocalStorage('USER'),
+      fields: [],
+      FORM_ID: 729,
+      entries: [],
+      fileParams: {},
     }
   },
   mounted() {
@@ -23,11 +28,17 @@ export default {
   methods: {
     async requestForm() {
       const { data } = await this.Api.getRequestForm(this.FORM_ID)
-      this.fields = this.common.setInfo(data.fields)
+      this.fields = data.fields
+      console.log(
+        '%c 🍬 this.fields: ',
+        'font-size:20px;background-color: #33A5FF;color:#fff;',
+        this.fields,
+      )
     },
   },
 }
 </script>
+
 <style lang="scss">
 .legal {
   width: 100%;

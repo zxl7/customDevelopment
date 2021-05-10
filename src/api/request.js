@@ -7,8 +7,7 @@ import { Toast } from 'vant'
 Vue.use(Toast)
 
 const service = axios.create({
-  // baseURL: 'https://zwfw.cdht.gov.cn/',
-  timeout: 3 * 1000,
+  timeout: 10 * 1000,
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/json; application/x-www-form-urlencoded; charset=UTF-8',

@@ -53,7 +53,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     historyApiFallback: true,
     proxy: {
       '/api': {
-        target: 'https://zwfw.cdht.gov.cn',
+        target: 'https://beta.skylarkly.com',
         changeOrigin: true,
       },
     },
