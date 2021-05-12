@@ -3,9 +3,10 @@
 import axios from 'axios'
 import Vue from 'vue'
 import { Toast } from 'vant'
-
 Vue.use(Toast)
 
+const Authorization =
+  'b01110629541b3eb51697db5a05dd2388aed11a58c81a75e9c08347bc30a09e6:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lc3BhY2VfaWQiOjF9.wj9V0ZVOOzSPuRYztizJL_5w0u8aJKb05Z73tEV_HuY'
 const service = axios.create({
   timeout: 10 * 1000,
   headers: {
@@ -29,6 +30,9 @@ const removePending = (config) => {
 // 2.请求拦截器
 service.interceptors.request.use(
   (config) => {
+    config.headers = {
+      Authorization: Authorization,
+    }
     // 发请求前做的一些处理，数据转化，配置请求头，设置token,设置loading等
     removePending(config) // 在一个axios发送前执行一下取消操作
     config.CancelToken = new CancelToken((c) => {

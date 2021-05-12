@@ -6,7 +6,7 @@ import common from './unit/common.js'
 import rem from './unit/rem.js'
 import '@vant/touch-emulator'
 import { Field, Icon, Popup, Picker, Uploader, Calendar, Toast, Loading, Dialog } from 'vant'
-// import '@byzanteam/slp-fields/dist/index.css'
+import '@byzanteam/slp-fields/dist/index.css'
 
 Vue.use(Loading)
 Vue.use(Toast)
