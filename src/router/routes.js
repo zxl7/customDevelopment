@@ -1,8 +1,8 @@
 export default [
   {
     path: '/',
-    name: 'legal',
-    component: () => import(/* webpackChunkName:'visit' */ '@/views/legal.vue'),
+    name: 'test',
+    component: () => import(/* webpackChunkName:'visit' */ '@/views/test.vue'),
   },
   {
     path: '*',

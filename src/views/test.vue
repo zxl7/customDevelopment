@@ -1,6 +1,5 @@
 <template>
   <div class="legal">
-    <!-- <Fields class="fields" :fields="fields" :FORM_ID="FORM_ID" /> -->
     <Fields
       :fields="fields"
       :entries="entries"
